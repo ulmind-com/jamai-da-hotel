@@ -18,18 +18,18 @@ export default defineConfig(({ mode }) => ({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.png'],
       manifest: {
-        name: 'Spice Dash Order',
-        short_name: 'Spice Dash',
+        name: 'Jamai Da Hotel',
+        short_name: 'Jamai Da Hotel',
         description: 'Order delicious food online',
         theme_color: '#ffffff',
         icons: [
           {
-            src: 'favicon.png',
+            src: 'Yellow and Brown Kitchen Food Logo_20251118_035404_0000.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'favicon.png',
+            src: 'Yellow and Brown Kitchen Food Logo_20251118_035404_0000.png',
             sizes: '512x512',
             type: 'image/png'
           }
