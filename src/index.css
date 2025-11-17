@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Clean white background */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    /* White cards with bold borders */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Bright yellow primary */
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 10%;
+
+    /* Light yellow secondary */
+    --secondary: 45 100% 62%;
+    --secondary-foreground: 0 0% 10%;
+
+    /* Light gray muted tones */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Golden yellow accent */
+    --accent: 42 95% 55%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Dark borders for bold look */
+    --border: 0 0% 10%;
+    --input: 0 0% 90%;
+    --ring: 48 100% 50%;
+
+    /* More rounded */
+    --radius: 1.5rem;
+
+    --whatsapp: 142 70% 45%;
+    
+    /* Yellow gradients only */
+    --gradient-yellow: linear-gradient(135deg, hsl(48 100% 50%), hsl(45 100% 62%));
+    --gradient-yellow-gold: linear-gradient(135deg, hsl(45 100% 62%), hsl(42 95% 55%));
+    
+    /* Section backgrounds */
+    --hero-bg: 48 95% 92%;
+    --footer-bg: 0 72% 51%;
+    --footer-text: 0 0% 100%;
+    
+    /* Card shadows */
+    --shadow-card: 0 8px 24px -6px hsl(0 0% 0% / 0.15);
+    --shadow-hover: 0 12px 32px -8px hsl(0 0% 0% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 48 100% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 48 100% 95%;
+    --sidebar-accent-foreground: 0 0% 20%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 48 100% 50%;
+  }
+
+  .dark {
+    /* Dark mode - clean dark background */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 14%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 14%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 48 100% 55%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 45 100% 62%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 42 95% 58%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 20%;
+    --ring: 48 100% 55%;
+
+    --whatsapp: 142 70% 50%;
+    
+    --gradient-yellow: linear-gradient(135deg, hsl(48 100% 55%), hsl(45 100% 62%));
+    --gradient-yellow-gold: linear-gradient(135deg, hsl(45 100% 62%), hsl(42 95% 58%));
+    
+    --hero-bg: 48 50% 20%;
+    --footer-bg: 0 65% 45%;
+    --footer-text: 0 0% 100%;
+    
+    --shadow-card: 0 8px 24px -6px hsl(0 0% 0% / 0.4);
+    --shadow-hover: 0 12px 32px -8px hsl(0 0% 0% / 0.6);
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 48 100% 55%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 48 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbars but keep scroll behavior */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
+  /* Playful hover animations */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-2 shadow-[0_12px_32px_-8px_hsl(0_0%_0%/0.25)];
+  }
+  
+  /* Bouncy scale animation */
+  .hover-bounce {
+    @apply transition-transform duration-200 ease-out;
+  }
+  
+  .hover-bounce:hover {
+    animation: bounce-scale 0.6s ease-in-out;
+  }
+  
+  @keyframes bounce-scale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}
