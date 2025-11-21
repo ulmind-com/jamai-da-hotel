@@ -36,6 +36,8 @@ const Cart = () => {
   const { isOpen: isRestaurantOpen, nextOpenTime, openingHours } = useRestaurantHours();
   const itemCount = getItemCount();
   const totalPrice = getTotalPrice();
+  const PACKAGING_CHARGE = 5;
+  const finalTotal = totalPrice + PACKAGING_CHARGE;
 
   const handleAddressSubmit = (data: AddressData) => {
     const phoneNumber = "917908288829";
@@ -54,14 +56,18 @@ const Cart = () => {
       return `${index + 1}. ${cartItem.item.name}${portionText}\n   Qty: ${cartItem.quantity} × ₹${price} = ₹${itemTotal}`;
     }).join('\n\n');
     
-    const totalPrice = getTotalPrice();
+    const itemsTotal = getTotalPrice();
     
     const message = `🍽️ *New Order Request*
 
 📦 *Items:*
 ${itemsList}
 
-💵 *Total Amount:* ₹${totalPrice}
+💰 *Bill Summary:*
+Items Total: ₹${itemsTotal}
+Packaging Charges: ₹${PACKAGING_CHARGE}
+━━━━━━━━━━━━━━━
+*Total Amount: ₹${finalTotal}*
 
 👤 *Customer Details:*
 Name: ${data.name}
@@ -104,7 +110,7 @@ Please confirm this order. Thank you! 🙏`;
               <div className="px-5 py-3.5 flex items-center justify-between gap-3">
                 <div className="text-left flex-shrink-0">
                   <p className="text-[11px] font-medium opacity-90 leading-tight">{itemCount} Item{itemCount > 1 ? 's' : ''}</p>
-                  <p className="text-lg font-bold leading-tight mt-0.5">₹{totalPrice}</p>
+                  <p className="text-lg font-bold leading-tight mt-0.5">₹{finalTotal}</p>
                 </div>
                 <span className="text-sm font-semibold whitespace-nowrap">View Cart</span>
               </div>
@@ -122,7 +128,7 @@ Please confirm this order. Thank you! 🙏`;
                 <div className="px-6 py-3.5 flex items-center justify-between">
                   <span className="text-sm">{itemCount} item{itemCount > 1 ? 's' : ''}</span>
                   <div className="flex items-center gap-3">
-                    <span className="text-base font-bold">₹{totalPrice}</span>
+                    <span className="text-base font-bold">₹{finalTotal}</span>
                     <span className="text-sm font-semibold">View Cart</span>
                   </div>
                 </div>
@@ -226,11 +232,21 @@ Please confirm this order. Thank you! 🙏`;
 
                 <DrawerFooter className="border-t pt-4 pb-6 px-4 md:px-6 shrink-0 safe-area-pb">
                   <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="text-xs text-muted-foreground">Total Amount</p>
-                        <p className="text-2xl font-bold text-foreground">₹{totalPrice}</p>
+                    <div className="bg-muted/50 rounded-lg p-3 border space-y-2">
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="text-muted-foreground">Items Total</span>
+                        <span className="text-foreground">₹{totalPrice}</span>
                       </div>
+                      <div className="flex justify-between items-center text-sm">
+                        <span className="text-muted-foreground">Packaging Charges</span>
+                        <span className="text-foreground">₹{PACKAGING_CHARGE}</span>
+                      </div>
+                      <div className="flex justify-between items-center pt-2 border-t">
+                        <span className="font-semibold text-foreground">Total Amount</span>
+                        <span className="text-xl font-bold text-primary">₹{finalTotal}</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
                       <Button
                         variant="ghost"
                         size="sm"
@@ -266,6 +282,7 @@ Please confirm this order. Thank you! 🙏`;
                     <AddressForm
                       itemName={`${cartItems.length} item${cartItems.length > 1 ? 's' : ''}`}
                       itemPrice={totalPrice}
+                      packagingCharge={PACKAGING_CHARGE}
                       quantity={1}
                       onSubmit={handleAddressSubmit}
                     />

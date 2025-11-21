@@ -11,6 +11,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import { menuData, categories, MenuItem } from "@/data/menuData";
 import { useNotifications } from "@/hooks/use-notifications";
 import { useThaliTime } from "@/hooks/use-thali-time";
+import { useTiffinTime } from "@/hooks/use-tiffin-time";
 
 const NotificationsWrapper = ({ children }: { children: React.ReactNode }) => {
   useNotifications();
@@ -19,18 +20,30 @@ const NotificationsWrapper = ({ children }: { children: React.ReactNode }) => {
 
 const Index = () => {
   const { isThaliTime } = useThaliTime();
+  const { tiffinPeriod, isTiffinTime } = useTiffinTime();
   
-  // Reorder categories based on thali time
+  // Reorder categories based on time - always show all, but reorder
   const orderedCategories = useMemo(() => {
-    if (isThaliTime) {
-      // During thali time (12:00 PM - 3:30 PM): Show Thali first
-      return ["Thali", ...categories.filter(cat => cat !== "Thali")];
-    } else {
-      // After thali time: Show All Items first, Thali last
-      const filtered = categories.filter(cat => cat !== "Thali");
-      return [...filtered, "Thali"];
+    const baseCategories = categories.filter(cat => cat !== "Thali" && cat !== "Tiffin");
+    
+    // Morning Tiffin time (7:00 AM - 11:59 AM): Tiffin first, Thali last
+    if (tiffinPeriod === 'morning') {
+      return ["Tiffin", ...baseCategories, "Thali"];
     }
-  }, [isThaliTime]);
+    
+    // Thali time (12:00 PM - 3:30 PM): Thali first, Tiffin last
+    if (isThaliTime) {
+      return ["Thali", ...baseCategories, "Tiffin"];
+    }
+    
+    // Evening Tiffin time (5:00 PM - 7:30 PM): Tiffin first, Thali last
+    if (tiffinPeriod === 'evening') {
+      return ["Tiffin", ...baseCategories, "Thali"];
+    }
+    
+    // Regular time: All categories in normal order, Thali and Tiffin at end
+    return [...baseCategories, "Tiffin", "Thali"];
+  }, [isThaliTime, tiffinPeriod]);
 
   const [activeCategory, setActiveCategory] = useState(orderedCategories[0]);
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
@@ -39,7 +52,7 @@ const Index = () => {
   // Update active category when time changes
   useMemo(() => {
     setActiveCategory(orderedCategories[0]);
-  }, [isThaliTime]);
+  }, [isThaliTime, tiffinPeriod]);
 
   // Flatten all menu items for search
   const allMenuItems = useMemo(() => {
@@ -72,6 +85,7 @@ const Index = () => {
             items={menuData[activeCategory]}
             onItemClick={handleItemClick}
             isThaliTime={isThaliTime}
+            tiffinPeriod={tiffinPeriod}
           />
         </main>
 

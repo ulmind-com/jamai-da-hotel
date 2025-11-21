@@ -44,11 +44,12 @@ type AddressFormValues = z.infer<typeof addressFormSchema>;
 interface AddressFormProps {
   itemName: string;
   itemPrice: number;
+  packagingCharge: number;
   quantity: number;
   onSubmit: (data: AddressFormValues) => void;
 }
 
-const AddressForm = ({ itemName, itemPrice, quantity, onSubmit }: AddressFormProps) => {
+const AddressForm = ({ itemName, itemPrice, packagingCharge, quantity, onSubmit }: AddressFormProps) => {
   const [selectedLocation, setSelectedLocation] = useState<{
     lat: number;
     lng: number;
@@ -80,9 +81,13 @@ const AddressForm = ({ itemName, itemPrice, quantity, onSubmit }: AddressFormPro
             <span className="text-muted-foreground">{itemName}</span>
             <span className="text-sm text-muted-foreground">₹{itemPrice} × {quantity}</span>
           </div>
+          <div className="flex justify-between items-center text-sm">
+            <span className="text-muted-foreground">Packaging Charges</span>
+            <span className="text-muted-foreground">₹{packagingCharge}</span>
+          </div>
           <div className="flex justify-between items-center pt-2 border-t border-border">
             <span className="font-semibold text-foreground">Total</span>
-            <span className="text-xl font-bold text-primary">₹{itemPrice * quantity}</span>
+            <span className="text-xl font-bold text-primary">₹{itemPrice * quantity + packagingCharge}</span>
           </div>
         </div>
       </div>

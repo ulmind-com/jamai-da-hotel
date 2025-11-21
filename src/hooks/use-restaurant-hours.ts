@@ -8,8 +8,8 @@ export interface RestaurantHours {
 }
 
 const RESTAURANT_HOURS: RestaurantHours = {
-  openHour: 11,
-  openMinute: 30,
+  openHour: 7,
+  openMinute: 0,
   closeHour: 23,
   closeMinute: 30,
 };

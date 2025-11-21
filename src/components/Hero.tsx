@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-food.jpg";
+import heroImage from "@/assets/hero-food-new.jpg";
 import { useRestaurantHours } from "@/hooks/use-restaurant-hours";
 import { Clock, CheckCircle2 } from "lucide-react";
 
