@@ -17,26 +17,16 @@ const Hero = () => {
       <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center text-center">
         <div className="animate-fade-in">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl">
-            Jamai Da HOTEL
+            Jamai Da Hotel
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-white/95 mb-6 sm:mb-8 font-semibold px-4 drop-shadow-lg">
-            Authentic Indian Flavors, Delivered to Your Door
+            Fresh Flavors from Our Kitchen to Your Table
           </p>
           
           {isOpen ? (
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-base sm:text-lg shadow-lg animate-scale-in">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="hidden sm:inline">Free Home Delivery Within 1 KM</span>
-                <span className="sm:hidden">Free Delivery (1 KM)</span>
-              </div>
-              
-              <div className="inline-flex items-center gap-2 bg-green-600/90 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Open Now • {openingHours}</span>
-              </div>
+            <div className="inline-flex items-center gap-2 bg-green-600/90 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Open Now • {openingHours}</span>
             </div>
           ) : (
             <div className="space-y-4 max-w-lg mx-auto">

@@ -8,20 +8,19 @@ const Footer = () => {
           {/* Restaurant Info */}
           <div className="md:col-span-2">
             <h3 className="text-3xl font-bold mb-4 text-white">
-              Jamai Da HOTEL
+              Jamai Da Hotel
             </h3>
             <p className="text-white/90 mb-4 max-w-md leading-relaxed">
               Authentic Indian cuisine crafted with love and the finest spices. Experience the rich flavors and traditions of India in every dish.
             </p>
           </div>
           
-          {/* Contact Us */}
           <div>
             <h4 className="text-lg font-semibold mb-4 tracking-wide">Contact Us</h4>
             <div className="space-y-3">
               <a href="tel:+917908288829" className="flex items-center gap-3 hover:text-yellow-300 transition-colors group">
                 <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">+91 79082 88829</span>
+                <span className="text-sm">+91 96414 42589</span>
               </a>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
@@ -37,7 +36,7 @@ const Footer = () => {
               <Clock className="w-4 h-4 mt-1 flex-shrink-0" />
               <div className="text-sm">
                 <p className="font-medium">Monday - Sunday</p>
-                <p className="text-white/80">11:00 AM - 11:00 PM</p>
+                <p className="text-white/80">7:00 AM - 11:30 PM</p>
               </div>
             </div>
           </div>
@@ -47,7 +46,7 @@ const Footer = () => {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/70 text-sm">
-              © {new Date().getFullYear()} Jamai Da HOTEL. All rights reserved.
+              © {new Date().getFullYear()} Jamai Da Hotel. All rights reserved.
             </p>
             
             {/* ULMiND Attribution */}

@@ -21,7 +21,7 @@ const Navbar = ({ allItems, onItemClick }: NavbarProps) => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Jamai Da HOTEL
+              Jamai Da Hotel
             </h1>
           </div>
 

@@ -24,12 +24,12 @@ export default defineConfig(({ mode }) => ({
         theme_color: '#ffffff',
         icons: [
           {
-            src: 'Yellow and Brown Kitchen Food Logo_20251118_035404_0000.png',
+            src: '/favicon.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'Yellow and Brown Kitchen Food Logo_20251118_035404_0000.png',
+            src: '/favicon.png',
             sizes: '512x512',
             type: 'image/png'
           }
