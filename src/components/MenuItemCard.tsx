@@ -60,7 +60,12 @@ import eggroll from "@/assets/eggroll.jpg";
 import chikenroll from "@/assets/chikenroll.jpg";
 import eggchikenroll from "@/assets/eggchikenroll.jpg";
 import pannerroll from "@/assets/pannerroll.jpg";
-
+import sabjibhat from "@/assets/sabjibhat.jpg";
+ 
+import paneerthali from "@/assets/paneerthali.jpeg";
+import chickenthali from "@/assets/chickenthali.jpg";
+import eggcurrythali from "@/assets/eggcurry.jpg";
+import fishthali from "@/assets/fishthali.jpg";
 
 
 interface MenuItemCardProps {
@@ -128,7 +133,11 @@ const imageMap: Record<string, string> = {
   "chiken-roll":chikenroll,
   "egg-chiken-roll":eggchikenroll,
   "panner-roll":pannerroll,
-
+  "sabjibhat":sabjibhat,
+  "paneerthali":paneerthali,
+  "chickenthali":chickenthali,
+  "eggcurrythali":eggcurrythali,
+  "fishthali":fishthali,
 
 };
 

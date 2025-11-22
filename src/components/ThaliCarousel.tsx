@@ -12,6 +12,11 @@ import rolls from "@/assets/rolls.jpg";
 import vegRice from "@/assets/veg-rice.jpg";
 import nonVegRice from "@/assets/non-veg-rice.jpg";
 import chowmein from "@/assets/chowmein.jpg";
+import sabjibhat from "@/assets/sabjibhat.jpg";
+import paneerthali from "@/assets/paneerthali.jpeg";
+import chickenthali from "@/assets/chickenthali.jpg";
+import eggcurrythali from "@/assets/eggcurry.jpg";
+import fishthali from "@/assets/fishthali.jpg";
 
 interface ThaliCarouselProps {
   items: MenuItem[];
@@ -29,7 +34,13 @@ const imageMap: Record<string, string> = {
   "veg-rice": vegRice,
   "non-veg-rice": nonVegRice,
   "chowmein": chowmein,
+  "sabjibhat": sabjibhat,
+  "paneerthali": paneerthali,
+  "chickenthali": chickenthali,
+  "eggcurrythali": eggcurrythali,
+  "fishthali": fishthali,
 };
+
 
 const ThaliCarousel = ({ items, onItemClick, isOrderingDisabled = false }: ThaliCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -148,8 +159,8 @@ const ThaliCarousel = ({ items, onItemClick, isOrderingDisabled = false }: Thali
 
         {/* Current Item (Center) - Large with golden glow */}
         <div 
-          onClick={() => onItemClick(currentItem)}
-          className="cursor-pointer flex-shrink-0"
+          onClick={() => !isOrderingDisabled && onItemClick(currentItem)}
+          className={`flex-shrink-0 ${!isOrderingDisabled ? 'cursor-pointer' : 'cursor-not-allowed'}`}
           style={{
             opacity: 1,
             transform: 'translateX(0) translateZ(0) rotateY(0deg) scale(1)',

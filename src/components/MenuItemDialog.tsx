@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useRestaurantHours } from "@/hooks/use-restaurant-hours";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
+
 // Import all images
 import chickenCurry from "@/assets/chicken-curry.jpg";
 import chickenPakora from "@/assets/chicken-pakora.jpg";
@@ -69,6 +70,11 @@ import eggroll from "@/assets/eggroll.jpg";
 import chikenroll from "@/assets/chikenroll.jpg";
 import eggchikenroll from "@/assets/eggchikenroll.jpg";
 import pannerroll from "@/assets/pannerroll.jpg";
+import sabjibhat from "@/assets/sabjibhat.jpg";
+import paneerthali from "@/assets/paneerthali.jpeg";
+import chickenthali from "@/assets/chickenthali.jpg";
+import eggcurrythali from "@/assets/eggcurry.jpg";
+import fishthali from "@/assets/fishthali.jpg";
 
 
 interface MenuItemDialogProps {
@@ -136,6 +142,11 @@ const imageMap: Record<string, string> = {
   "chiken-roll":chikenroll,
   "egg-chiken-roll":eggchikenroll,
   "panner-roll":pannerroll,
+  "sabjibhat":sabjibhat,
+  "paneerthali":paneerthali,
+  "chickenthali":chickenthali,
+  "eggcurrythali":eggcurrythali,
+  "fishthali":fishthali,
 };
 
 const MenuItemDialog = ({ item, open, onOpenChange }: MenuItemDialogProps) => {

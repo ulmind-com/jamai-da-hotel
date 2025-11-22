@@ -14,15 +14,15 @@ export interface MenuCategory {
 export const menuData: MenuCategory = {
   "All Items": [], // Will be populated below
   "Thali": [
-    { name: "Veg Thali", price: 45, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Complete vegetarian meal.", image: "vegetarian" },
-    { name: "Egg Thali", price: 60, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Nutritious meal with egg curry.", image: "chicken-curry" },
-    { name: "Fish Thali", price: 75, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Bengali style fish curry meal.", image: "chicken-curry" },
-    { name: "Chicken Thali", price: 95, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Hearty chicken curry meal.", image: "chicken-curry" },
-    { name: "Paneer Thali", price: 95, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Delicious paneer curry meal.", image: "vegetarian" },
-    { name: "Only Rice and Chicken Curry", price: 70, description: "Rice, alu bhaja/chokha, daal, papor with chicken curry.", image: "chicken-curry" },
-    { name: "Only Rice Fish Curry", price: 55, description: "Rice, alu bhaja/chokha, daal, papor with fish curry.", image: "chicken-curry" },
-    { name: "Only Rice Egg Curry", price: 45, description: "Rice, alu bhaja/chokha, daal, papor with egg curry.", image: "chicken-curry" },
-    { name: "Only Rice Paneer Curry", price: 70, description: "Rice, alu bhaja/chokha, daal, papor with paneer curry.", image: "vegetarian" }
+    { name: "Veg Thali", price: 45, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Complete vegetarian meal.", image: "sabjibhat" },
+    { name: "Egg Thali", price: 60, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Nutritious meal with egg curry.", image: "eggcurrythali" },
+    { name: "Fish Thali", price: 75, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Bengali style fish curry meal.", image: "fishthali" },
+    { name: "Chicken Thali", price: 95, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Hearty chicken curry meal.", image: "chickenthali" },
+    { name: "Paneer Thali", price: 95, description: "Rice, 2 sabji, alu bhaja/chokha, daal, papor. Delicious paneer curry meal.", image: "paneerthali" },
+    { name: "Only Rice and Chicken Curry", price: 70, description: "Rice, alu bhaja/chokha, daal, papor with chicken curry.", image: "chickenthali" },
+    { name: "Only Rice Fish Curry", price: 55, description: "Rice, alu bhaja/chokha, daal, papor with fish curry.", image: "fishthali" },
+    { name: "Only Rice Egg Curry", price: 45, description: "Rice, alu bhaja/chokha, daal, papor with egg curry.", image: "eggcurrythali" },
+    { name: "Only Rice Paneer Curry", price: 70, description: "Rice, alu bhaja/chokha, daal, papor with paneer curry.", image: "paneerthali" }
   ],
   "Tiffin": [
     // Morning Tiffin (7:00 AM - 11:59 AM)
