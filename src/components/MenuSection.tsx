@@ -55,7 +55,7 @@ const MenuSection = ({ category, items, onItemClick, isThaliTime = false, tiffin
       {isThaliDisabled && (
         <div className="bg-amber-100 dark:bg-amber-900/30 border-2 border-amber-500 rounded-lg p-4 mb-8 text-center">
           <p className="text-amber-800 dark:text-amber-200 font-semibold">
-            ⏰ Regular Menu Time - Thali items are only available from 12:00 PM - 3:30 PM. Please check our regular menu items.
+            ⏰ Thali items are only available from 12:00 PM - 3:30 PM.
           </p>
         </div>
       )}
