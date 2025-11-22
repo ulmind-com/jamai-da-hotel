@@ -20,6 +20,56 @@ import rolls from "@/assets/rolls.jpg";
 import vegRice from "@/assets/veg-rice.jpg";
 import nonVegRice from "@/assets/non-veg-rice.jpg";
 import chowmein from "@/assets/chowmein.jpg";
+import chilichiken from "@/assets/chilichiken.jpeg";
+import chikenchap from "@/assets/chikenchap.jpg";
+import chikenmanchurian from "@/assets/chikenmanchurian.jpg";
+import chikenkosha from "@/assets/chikenkosha.jpeg";
+import chikenmasla from "@/assets/chikenmasla.jpeg";
+import eggtadka from "@/assets/eggtadka.jpg";
+import chilipanner from "@/assets/chilipanner.jpg";
+import maslapanner from "@/assets/maslapanner.avif";
+import matarpanner from "@/assets/matarpanner.jpg";
+import chanamasla from "@/assets/chanamasla.webp";
+import chanadal from "@/assets/chanadal.jpg";
+import blackchana from "@/assets/blackchana.webp";
+import vegmanchurian from "@/assets/vegmanchurian.jpg";
+import chilisoyabin from "@/assets/chilisoyabin.jpg";
+import vegtadka from "@/assets/vegtadka.jpg";
+import mixveg from "@/assets/mixveg.jpg";
+import alusoyabin from "@/assets/alusoyabin.jpg";
+import govialu from "@/assets/govi alu.jpg";
+import aludam from "@/assets/aludam.jpg";
+import begunbharta from "@/assets/begunbharta.webp";
+import alubegun from "@/assets/alubegun.webp";
+import chikenbriyani from "@/assets/chikenbriyani.webp";
+import vegfriedrice from "@/assets/vegfriedrice.jpg";
+import eggfriedrice from "@/assets/eggfriedrice.jpg";
+import chikenfriedrice from "@/assets/chikenfriedrice.jpg";
+import plainroti from "@/assets/plain-roti.jpg";
+import plainparatha from "@/assets/plain-paratha.jpg";
+import aluparatha from "@/assets/aluparatha.jpg";
+import sattuparatha from "@/assets/sattuparatha.jpg";
+import lachhaparatha from "@/assets/lachhaparatha.webp";
+import plainpuri from "@/assets/plainpuri.jpg";
+import palakpuri from "@/assets/palakpuri.jpg";
+import plainnun from "@/assets/plainnun.jpg";
+import butternun from "@/assets/butternun.jpg";
+import luchisobji from "@/assets/luchisobji.webp";
+import breadtost from "@/assets/breadtost.jpg";
+import eggtost from "@/assets/eggtost.jpg";
+import samosa from "@/assets/samosa.jpg";
+import chikenlolipop from "@/assets/chikenlolipop.jpg";
+import chikenpokora from "@/assets/chikenpokora.jpg";
+import vegpokora from "@/assets/vegpokora.jpg";
+import vegchowmin from "@/assets/vegchowmin.jpg";
+import chikenchowmin from "@/assets/chikenchowmin.jpg";
+import eggchikenchowmin from "@/assets/eggchikenchow.jpg";
+import specialchikenchowmin from "@/assets/specialchikenchowmin.webp";
+import eggroll from "@/assets/eggroll.jpg";
+import chikenroll from "@/assets/chikenroll.jpg";
+import eggchikenroll from "@/assets/eggchikenroll.jpg";
+import pannerroll from "@/assets/pannerroll.jpg";
+
 
 interface MenuItemDialogProps {
   item: MenuItem | null;
@@ -37,6 +87,55 @@ const imageMap: Record<string, string> = {
   "veg-rice": vegRice,
   "non-veg-rice": nonVegRice,
   "chowmein": chowmein,
+  "chilichiken":chilichiken,
+  "chiken-chap":chikenchap,
+  "chiken-manchurian":chikenmanchurian,
+  "chiken-kosha":chikenkosha,
+  "chiken-masla":chikenmasla,
+  "egg-tadka":eggtadka,
+  "chili-panner":chilipanner,
+  "masla-panner":maslapanner,
+  "matar-panner":matarpanner,
+  "chanamasla":chanamasla,
+  "chanadal":chanadal,
+  "black-chana":blackchana,
+  "veg-manchurian":vegmanchurian,
+  "chili-soyabin":chilisoyabin,
+  "vegtadka":vegtadka,
+  "mix-veg":mixveg,
+  "alu-soyabin":alusoyabin,
+  "govi-alu":govialu,
+  "alu-dam":aludam,
+  "begun-bharta":begunbharta,
+  "alu-begun":alubegun,
+  "chiken-briyani":chikenbriyani,
+  "veg-fried-rice":vegfriedrice,
+  "egg-fried-rice":eggfriedrice,
+  "chiken-fried-rice":chikenfriedrice,
+   "plain-roti":plainroti,
+  "plain-paratha":plainparatha,
+  "alu-paratha":aluparatha,
+  "sattu-paratha":sattuparatha,
+  "lachha-paratha":lachhaparatha,
+  "plain-puri":plainpuri,
+  "palak-puri":palakpuri,
+  "plain-nun":plainnun,
+  "butter-nun":butternun,
+  "luchi-sobji":luchisobji,
+  "bread-tost":breadtost,
+  "egg-tost":eggtost,
+  "samosa":samosa,
+  "chiken-lolipop":chikenlolipop,
+  "chiken-pokora":chikenpokora,
+  "veg-pokora":vegpokora,
+  "veg-chowmin":vegchowmin,
+  "chiken-chowmin":chikenchowmin,
+  "egg-chiken-chowmin":eggchikenchowmin,
+  "special-chiken-chowmin":specialchikenchowmin,
+  "egg-roll":eggroll,
+  "chiken-roll":chikenroll,
+  "egg-chiken-roll":eggchikenroll,
+  "panner-roll":pannerroll,
 };
 
 const MenuItemDialog = ({ item, open, onOpenChange }: MenuItemDialogProps) => {
