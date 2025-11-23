@@ -75,6 +75,7 @@ import paneerthali from "@/assets/paneerthali.jpeg";
 import chickenthali from "@/assets/chickenthali.jpg";
 import eggcurrythali from "@/assets/eggcurry.jpg";
 import fishthali from "@/assets/fishthali.jpg";
+import eggchowmin from "@/assets/eggchowmin.jpg";
 
 
 interface MenuItemDialogProps {
@@ -147,6 +148,7 @@ const imageMap: Record<string, string> = {
   "chickenthali":chickenthali,
   "eggcurrythali":eggcurrythali,
   "fishthali":fishthali,
+  "eggchowmin":eggchowmin,
 };
 
 const MenuItemDialog = ({ item, open, onOpenChange }: MenuItemDialogProps) => {

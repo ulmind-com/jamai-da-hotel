@@ -32,6 +32,18 @@ const MenuSection = ({ category, items, onItemClick, isThaliTime = false, tiffin
   // During evening tiffin time (5:00 PM - 7:30 PM), disable ordering for thali items only
   const isEveningThaliDisabled = tiffinPeriod === 'evening' && isThali;
   
+  // Check if a specific tiffin item should be disabled based on its period
+  const isTiffinItemDisabled = (item: MenuItem) => {
+    if (!item.tiffinPeriod) return false;
+    if (item.tiffinPeriod === 'morning' && tiffinPeriod !== 'morning') {
+      return true;
+    }
+    if (item.tiffinPeriod === 'evening' && tiffinPeriod !== 'evening') {
+      return true;
+    }
+    return false;
+  };
+  
   // For "All Items", mix circular and card layouts
   // 8 items on mobile (2 rows of 4), 16 on larger screens (2 rows of 8)
   const circularCount = isMobile ? 8 : 16;
@@ -100,8 +112,9 @@ const MenuSection = ({ category, items, onItemClick, isThaliTime = false, tiffin
                   <MenuItemCard 
                     key={`circle-${item.name}-${index}`} 
                     item={item}
-                    onClick={() => isOrderingDisabled ? {} : onItemClick(item)}
+                    onClick={() => (isOrderingDisabled || isTiffinItemDisabled(item)) ? {} : onItemClick(item)}
                     variant="circle"
+                    disabled={isOrderingDisabled || isTiffinItemDisabled(item)}
                   />
                 ))}
               </div>
@@ -114,13 +127,14 @@ const MenuSection = ({ category, items, onItemClick, isThaliTime = false, tiffin
             </>
           )}
           
-          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ${(isOrderingDisabled || isTiffinDisabled) ? 'opacity-50 pointer-events-none' : ''}`}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {cardItems.map((item, index) => (
               <MenuItemCard 
                 key={`${item.name}-${index}`} 
                 item={item}
-                onClick={() => (isOrderingDisabled || isTiffinDisabled) ? {} : onItemClick(item)}
+                onClick={() => (isOrderingDisabled || isTiffinDisabled || isTiffinItemDisabled(item)) ? {} : onItemClick(item)}
                 variant="card"
+                disabled={isOrderingDisabled || isTiffinDisabled || isTiffinItemDisabled(item)}
               />
             ))}
           </div>

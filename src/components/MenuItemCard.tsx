@@ -66,12 +66,13 @@ import paneerthali from "@/assets/paneerthali.jpeg";
 import chickenthali from "@/assets/chickenthali.jpg";
 import eggcurrythali from "@/assets/eggcurry.jpg";
 import fishthali from "@/assets/fishthali.jpg";
-
+import eggchowmin from "@/assets/eggchowmin.jpg";
 
 interface MenuItemCardProps {
   item: MenuItem;
   onClick: () => void;
   variant?: "card" | "circle";
+  disabled?: boolean;
 }
 
 const imageMap: Record<string, string> = {
@@ -138,30 +139,42 @@ const imageMap: Record<string, string> = {
   "chickenthali":chickenthali,
   "eggcurrythali":eggcurrythali,
   "fishthali":fishthali,
+  "eggchowmin":eggchowmin,
 
 };
 
-const MenuItemCard = ({ item, onClick, variant = "card" }: MenuItemCardProps) => {
+const MenuItemCard = ({ item, onClick, variant = "card", disabled = false }: MenuItemCardProps) => {
   const imageSrc = imageMap[item.image] || chickenCurry;
 
   const handleBuyClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    onClick();
+    if (!disabled) {
+      onClick();
+    }
   };
 
   if (variant === "circle") {
     return (
       <button
-        onClick={onClick}
-        className="group flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-muted/50 transition-all duration-300 cursor-pointer"
+        onClick={disabled ? undefined : onClick}
+        disabled={disabled}
+        className={`group flex flex-col items-center gap-2 p-2 rounded-lg transition-all duration-300 ${
+          disabled 
+            ? 'opacity-50 cursor-not-allowed' 
+            : 'hover:bg-muted/50 cursor-pointer'
+        }`}
       >
-        <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+        <div className={`relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden shadow-md transition-all duration-300 ${
+          !disabled && 'group-hover:shadow-xl group-hover:scale-105'
+        }`}>
           <img
             src={imageSrc}
             alt={item.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {!disabled && (
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          )}
         </div>
         <div className="text-center">
           <h3 className="font-semibold text-sm sm:text-base text-foreground line-clamp-1">
@@ -182,12 +195,18 @@ const MenuItemCard = ({ item, onClick, variant = "card" }: MenuItemCardProps) =>
 
   return (
     <div 
-      onClick={onClick}
-      className="bg-card rounded-3xl p-6 pt-24 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 animate-fade-in cursor-pointer group relative mt-20"
+      onClick={disabled ? undefined : onClick}
+      className={`bg-card rounded-3xl p-6 pt-24 shadow-lg transition-all duration-300 animate-fade-in group relative mt-20 ${
+        disabled 
+          ? 'opacity-50 cursor-not-allowed' 
+          : 'hover:shadow-2xl hover:-translate-y-1 cursor-pointer'
+      }`}
     >
       {/* Circular Image Overlapping Top Edge */}
       <div className="absolute -top-20 left-1/2 -translate-x-1/2">
-        <div className="w-40 h-40 rounded-full overflow-hidden shadow-xl border-4 border-card group-hover:scale-105 transition-transform duration-300">
+        <div className={`w-40 h-40 rounded-full overflow-hidden shadow-xl border-4 border-card transition-transform duration-300 ${
+          !disabled && 'group-hover:scale-105'
+        }`}>
           <img 
             src={imageSrc} 
             alt={item.name}
@@ -219,9 +238,14 @@ const MenuItemCard = ({ item, onClick, variant = "card" }: MenuItemCardProps) =>
           
           <button
             onClick={handleBuyClick}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-2 px-6 rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
+            disabled={disabled}
+            className={`font-bold py-2 px-6 rounded-full transition-all duration-300 ${
+              disabled
+                ? 'bg-muted text-muted-foreground cursor-not-allowed'
+                : 'bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 active:scale-95'
+            }`}
           >
-            Buy Now
+            {disabled ? 'Not Available' : 'Buy Now'}
           </button>
         </div>
       </div>

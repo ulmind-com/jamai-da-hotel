@@ -36,9 +36,10 @@ export const menuData: MenuCategory = {
     { name: "Chicken Pokora", price: 15, description: "Crispy deep-fried chicken fritters marinated with aromatic spices. Served hot with mint chutney.", image: "chiken-pokora", tiffinPeriod: 'evening' },
     { name: "Veg Pakora", price: 10, description: "Mixed vegetable fritters coated in spiced gram flour batter and deep-fried. Crispy and delicious.", image: "veg-pokora", tiffinPeriod: 'evening' },
     { name: "Veg Chowmein", price: 40, description: "Classic Hakka noodles stir-fried with fresh vegetables, garlic, and savory sauces. Light and tasty evening snack.", image: "veg-chowmin", tiffinPeriod: 'evening' },
-    { name: "Chicken Chowmein", price: 50, description: "Delicious noodles stir-fried with tender chicken pieces, crunchy vegetables, and aromatic sauces.", image: "chiken-chowmin", tiffinPeriod: 'evening' },
+    { name: "Egg Chowmein ", price: 50, description: "Premium egg chowmein , special spices, and chef's signature sauce.", image: "eggchowmin", tiffinPeriod: 'evening' },
+    { name: "Chicken Chowmein", price: 70, description: "Delicious noodles stir-fried with tender chicken pieces, crunchy vegetables, and aromatic sauces.", image: "chiken-chowmin", tiffinPeriod: 'evening' },
     { name: "Egg Chicken Chowmein", price: 80, description: "Best of both worlds - noodles with chicken and eggs, vegetables, and flavorful sauces.", image: "egg-chiken-chowmin", tiffinPeriod: 'evening' },
-    { name: "Chicken Chowmein Special", price: 75, description: "Premium chicken chowmein with extra chicken, special spices, and chef's signature sauce.", image: "special-chiken-chowmin", tiffinPeriod: 'evening' },
+    
     { name: "Egg Roll", price: 35, description: "Soft paratha wrapped around spiced egg omelet with onions, green chilies, and sauces. Quick and tasty.", image: "egg-roll", tiffinPeriod: 'evening' },
     { name: "Chicken Roll", price: 70, description: "Succulent chicken tikka pieces wrapped in soft paratha with onions, mint chutney, and spicy sauces.", image: "chiken-roll", tiffinPeriod: 'evening' },
     { name: "Egg Chicken Roll", price: 75, description: "Delicious combination of egg and chicken tikka wrapped in paratha with veggies and tangy sauces.", image: "egg-chiken-roll", tiffinPeriod: 'evening' },
