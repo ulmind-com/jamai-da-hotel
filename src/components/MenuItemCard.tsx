@@ -67,6 +67,8 @@ import chickenthali from "@/assets/chickenthali.jpg";
 import eggcurrythali from "@/assets/eggcurry.jpg";
 import fishthali from "@/assets/fishthali.jpg";
 import eggchowmin from "@/assets/eggchowmin.jpg";
+import dalpuri from "@/assets/dalpuriimage.jpg";
+import satupuri from "@/assets/sattupuri.jpg";
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -140,6 +142,8 @@ const imageMap: Record<string, string> = {
   "eggcurrythali":eggcurrythali,
   "fishthali":fishthali,
   "eggchowmin":eggchowmin,
+  "dalpuri":dalpuri,
+  "satupuri":satupuri,
 
 };
 

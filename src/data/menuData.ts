@@ -46,7 +46,7 @@ export const menuData: MenuCategory = {
     { name: "Paneer Roll", price: 70, description: "Grilled paneer cubes with onions, bell peppers, and sauces wrapped in soft paratha. Perfect vegetarian option.", image: "panner-roll", tiffinPeriod: 'evening' }
   ],
   "Non Veg": [
-    { name: "Chili Chicken", price: 50, half: 30, description: "Spicy Indo-Chinese chicken pieces tossed with green chilies, onions, and bell peppers. 4 pcs full, 2 pcs half.", image: "chilichiken" },
+    { name: "Chili Chicken", price: 100, half: 50, description: "Spicy Indo-Chinese chicken pieces tossed with green chilies, onions, and bell peppers. 4 pcs full, 2 pcs half.", image: "chilichiken" },
     { name: "Chicken Chaap", price: 60, description: "Tender chicken pieces marinated in yogurt and spices, slow-cooked in a rich, flavorful gravy.", image: "chiken-chap" },
     { name: "Chicken Manchurian", price: 60, half: 30, description: "Crispy chicken balls in tangy, spicy Indo-Chinese sauce with soy, vinegar, and garlic. 4 pcs full, 2 pcs half.", image: "chiken-manchurian" },
     { name: "Chicken Kosha", price: 100, half: 50, description: "Traditional Bengali-style dry chicken curry with whole spices, slow-cooked to perfection. 4 pcs full, 2 pcs half.", image: "chiken-kosha" },
@@ -81,6 +81,8 @@ export const menuData: MenuCategory = {
     { name: "Plain Paratha", price: 6, description: "Layered whole wheat flatbread cooked on a griddle with ghee. Flaky and delicious.", image: "plain-paratha" },
     { name: "Alu Paratha", price: 14, description: "Stuffed whole wheat flatbread filled with spiced mashed potatoes. Served hot with butter.", image: "alu-paratha" },
     { name: "Sattu Paratha", price: 14, description: "Traditional flatbread stuffed with roasted gram flour mixture and spices. Nutritious and filling.", image: "sattu-paratha" },
+    { name: "Sattu Puri", price: 14, description: "Nutritious flatbread filled with spiced roasted gram flour. A healthy and tasty.", image: "satupuri" },
+    { name: "Dal Puri", price: 14, description: "Crispy deep-fried bread stuffed with seasoned yellow gram paste. Filling and flavorful.", image: "dalpuri" },
     { name: "Lachha Paratha", price: 15, description: "Multi-layered flaky flatbread with visible layers. Crispy outside, soft inside. Brushed with ghee.", image: "lachha-paratha" },
     { name: "Plain Puri", price: 5, description: "Deep-fried whole wheat puffed bread. Light, crispy, and golden brown. Great with any curry.", image: "plain-puri" },
     { name: "Palak Puri", price: 6, description: "Healthy deep-fried puffed bread made with spinach and whole wheat. Nutritious and tasty.", image: "palak-puri" },
