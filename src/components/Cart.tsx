@@ -16,6 +16,7 @@ import AddressForm from "./AddressForm";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRestaurantHours } from "@/hooks/use-restaurant-hours";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { menuData } from "@/data/menuData";
 
 interface AddressData {
   name: string;
@@ -36,8 +37,14 @@ const Cart = () => {
   const { isOpen: isRestaurantOpen, nextOpenTime, openingHours } = useRestaurantHours();
   const itemCount = getItemCount();
   const totalPrice = getTotalPrice();
-  const PACKAGING_CHARGE = 5;
-  const finalTotal = totalPrice + PACKAGING_CHARGE;
+  
+  // Calculate packaging charge: ₹5 per item, excluding Roti section items
+  const packagingCharge = cartItems.filter(cartItem => {
+    const isRotiItem = menuData["Roti"].some(rotiItem => rotiItem.name === cartItem.item.name);
+    return !isRotiItem;
+  }).length * 5;
+  
+  const finalTotal = totalPrice + packagingCharge;
 
   const handleAddressSubmit = (data: AddressData) => {
     const phoneNumber = "919641442589";
@@ -65,7 +72,7 @@ ${itemsList}
 
 💰 *Bill Summary:*
 Items Total: ₹${itemsTotal}
-Packaging Charges: ₹${PACKAGING_CHARGE}
+Packaging Charges (₹5 per item): ₹${packagingCharge}
 ━━━━━━━━━━━━━━━
 *Total Amount: ₹${finalTotal}*
 
@@ -238,8 +245,8 @@ Please confirm this order. Thank you! 🙏`;
                         <span className="text-foreground">₹{totalPrice}</span>
                       </div>
                       <div className="flex justify-between items-center text-sm">
-                        <span className="text-muted-foreground">Packaging Charges</span>
-                        <span className="text-foreground">₹{PACKAGING_CHARGE}</span>
+                        <span className="text-muted-foreground">Packaging Charges (₹5 per item)</span>
+                        <span className="text-foreground">₹{packagingCharge}</span>
                       </div>
                       <div className="flex justify-between items-center pt-2 border-t">
                         <span className="font-semibold text-foreground">Total Amount</span>
@@ -282,7 +289,7 @@ Please confirm this order. Thank you! 🙏`;
                     <AddressForm
                       itemName={`${cartItems.length} item${cartItems.length > 1 ? 's' : ''}`}
                       itemPrice={totalPrice}
-                      packagingCharge={PACKAGING_CHARGE}
+                      packagingCharge={packagingCharge}
                       quantity={1}
                       onSubmit={handleAddressSubmit}
                     />
