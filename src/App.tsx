@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 // ✅ Snowfall import
-import Snowfall from "react-snowfall";
+// import Snowfall from "react-snowfall";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +21,7 @@ const App = () => (
         <Sonner />
 
         {/* 🎄 Global subtle snowfall, GfG-style */}
-        <Snowfall
+        {/* <Snowfall
           style={{
             position: "fixed",
             width: "100vw",
@@ -37,7 +37,7 @@ const App = () => (
           speed={[0.5, 1.5]}         // gentle fall
           wind={[-0.3, 0.6]}         // slight horizontal drift
           opacity={[0.6, 1]}
-        />
+        /> */}
 
         <BrowserRouter>
           <Routes>
